@@ -2,6 +2,25 @@
 # Edited by tthoma24 9/22/17
 # A simple shell script to provision a dedicated MySQL docker container
 # Credit: https://coreos.com/quay-enterprise/docs/latest/mysql-container.html
+#
+#
+# * This file incorporates work covered by the following copyright and  
+# * permission notice:  
+# *  
+# *     Copyright (c) CoreOS, Inc.
+# *
+# *  Licensed under the Apache License, Version 2.0 (the "License");
+# *  you may not use this file except in compliance with the License.
+# *  You may obtain a copy of the License at
+# *
+# *      http://www.apache.org/licenses/LICENSE-2.0
+# *
+# *  Unless required by applicable law or agreed to in writing, software
+# *  distributed under the License is distributed on an "AS IS" BASIS,
+# *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# *  See the License for the specific language governing permissions and
+# *  limitations under the License.
+
 
 # Pull the Oracle MySQL docker image
 docker pull mysql:5.7
