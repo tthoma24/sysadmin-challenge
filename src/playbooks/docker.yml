@@ -1,0 +1,23 @@
+---
+- hosts: docker
+  tasks:
+    - name: Install docker
+      apt: pkg=docker.io state=installed update_cache=true
+
+    - name: Install AWS command line tools
+      apt: pkg=awscli state=installed update_cache=true
+
+    - name: Copy docker scripts to data dir
+      copy: src=source/of/data dest=/data mode=0755
+
+    - name: Setup apache docker container
+      shell: /data/images/apache/setup.sh
+
+    - name: Setup MySQL docker container
+      shell: /data/images/mysql/setup.sh
+
+    - name: Copy log cron job into place
+      copy: src=/data/scripts/dockerlogs.cron.d dest=/etc/cron.d/dockerbackups mode=0644
+
+    - name: Copy docker backup cron job into place
+      copy: src=/data/scripts/dockerbackups.cron.d dest=/etc/cron.d/dockerbackups mode=0644
